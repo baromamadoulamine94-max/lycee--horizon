@@ -1,0 +1,465 @@
+/* ============================================
+   Lycée Horizon - Style Global
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a5276;
+    --primary-light: #2980b9;
+    --accent: #e67e22;
+    --accent-hover: #d35400;
+    --bg: #f5f7fa;
+    --white: #ffffff;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --radius: 12px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER & NAVIGATION */
+header {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    text-align: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-top h1 {
+    color: var(--white);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.header-top p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+nav {
+    background: var(--primary-light);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 28px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+nav ul li a.active {
+    background: var(--accent);
+}
+
+/* MAIN CONTENT */
+main {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+/* CARDS */
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* BANNIÈRE */
+.banner {
+    width: 100%;
+    height: 320px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: rgba(0,0,0,0.5);
+    color: var(--white);
+}
+
+.banner-overlay h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* TABLEAUX */
+.table-container {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    font-size: 0.95rem;
+}
+
+thead th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+tbody tr:hover {
+    background: #e8f4f8;
+    transition: background 0.3s;
+}
+
+tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* LISTE DES MATIÈRES */
+.matiere-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.matiere-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    border-left: 5px solid var(--primary-light);
+    transition: all 0.3s ease;
+}
+
+.matiere-item:hover {
+    border-left-color: var(--accent);
+    transform: translateX(5px);
+}
+
+.matiere-item h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.matiere-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* ANNONCES */
+.annonce-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.annonce-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    transition: all 0.3s ease;
+}
+
+.annonce-item:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.annonce-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.annonce-content h3 {
+    color: var(--primary);
+    margin-bottom: 6px;
+    font-size: 1.15rem;
+}
+
+.annonce-content .date {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.annonce-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.btn-alert {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 32px;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(230,126,34,0.3);
+}
+
+.btn-alert:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(230,126,34,0.4);
+}
+
+/* FORMULAIRE */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(41,128,185,0.15);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(26,82,118,0.3);
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    display: none;
+}
+
+.error-msg.visible {
+    display: block;
+}
+
+/* FOOTER */
+footer {
+    background: var(--primary);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+footer .footer-links {
+    margin-top: 10px;
+}
+
+footer .footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: var(--white);
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+    .header-top h1 {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 12px 20px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .banner {
+        height: 220px;
+    }
+
+    .banner-overlay h2 {
+        font-size: 1.3rem;
+    }
+
+    main {
+        padding: 25px 15px;
+    }
+
+    .page-title {
+        font-size: 1.7rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .matiere-list {
+        grid-template-columns: 1fr;
+    }
+
+    .annonce-item {
+        flex-direction: column;
+        padding: 18px 20px;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    thead th, tbody td {
+        padding: 10px 12px;
+    }
+
+    .form-container {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 180px;
+    }
+
+    .banner-overlay {
+        padding: 15px;
+    }
+
+    .banner-overlay h2 {
+        font-size: 1.1rem;
+    }
+}
